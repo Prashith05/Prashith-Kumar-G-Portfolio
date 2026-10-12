@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Contact — Prashith Kumar G</title>
+</head>
+<body>
+
+  <nav class="nav">
+    <span class="nav-logo">PK</span>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html"   class="navi">Home</a>
+      <a href="about.html"   class="navi">About</a>
+      <a href="skill.html"   class="navi">Skills</a>
+      <a href="project.html" class="navi">Projects</a>
+      <a href="contact.html" class="navi">Contact</a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <section id="contact" style="padding-top:calc(var(--nav-h) + 4rem);">
+    <span class="sec-eyebrow reveal">Let's Connect</span>
+    <h2 class="sec-title reveal">Stay Connected</h2>
+    <div class="sec-line reveal"></div>
+
+    <div class="contact-grid">
+      <!-- Links column -->
+      <div class="reveal">
+        <p class="contact-intro">
+          I'm always open to discussing new opportunities, interesting projects,
+          or just a conversation about tech. Reach out on any of the platforms below.
+        </p>
+        <div class="contact-links">
+
+          <a href="mailto:prashith3@gmail.com" class="contact-link" target="_blank">
+            <div class="contact-link-icon">
+              <img src="./images/email.svg" alt="Email">
+            </div>
+            <div>
+              <div class="cl-label">Email</div>
+              <div class="cl-value">prashith3@gmail.com</div>
+            </div>
+          </a>
+
+          <a href="https://github.com/Prashith05" class="contact-link" target="_blank">
+            <div class="contact-link-icon">
+              <img src="./images/github.svg" alt="GitHub">
+            </div>
+            <div>
+              <div class="cl-label">GitHub</div>
+              <div class="cl-value">Prashith05</div>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/prashith-kumar-g-63981139b/" class="contact-link" target="_blank">
+            <div class="contact-link-icon">
+              <img src="./images/linkedin.svg" alt="LinkedIn">
+            </div>
+            <div>
+              <div class="cl-label">LinkedIn</div>
+              <div class="cl-value">Prashith Kumar G</div>
+            </div>
+          </a>
+
+          <a href="https://instagram.com/prasi__05" class="contact-link" target="_blank">
+            <div class="contact-link-icon">
+              <img src="./images/instagram.svg" alt="Instagram">
+            </div>
+            <div>
+              <div class="cl-label">Instagram</div>
+              <div class="cl-value">@prasi__05</div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Resume card -->
+      <div class="resume-card reveal">
+        <div class="resume-icon-wrap">📄</div>
+        <h3>My Resume</h3>
+        <p>
+          Download my resume for a full overview of my skills, experience,
+          and projects.
+        </p>
+        <a href="resume.pdf" download="Prashith_Kumar_G_Resume.pdf">
+          <button class="btn-primary" style="width:100%;justify-content:center;">
+            &#8595; Download Resume
+          </button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-text">© 2025 Prashith Kumar G</span>
+    <span class="footer-text">Python Full-Stack Developer</span>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const links  = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      links.classList.remove('open');
+    }));
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+    }, {threshold: 0.12});
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

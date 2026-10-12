@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Skills — Prashith Kumar G</title>
+</head>
+<body>
+
+  <nav class="nav">
+    <span class="nav-logo">PK</span>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html"   class="navi">Home</a>
+      <a href="about.html"   class="navi">About</a>
+      <a href="skill.html"   class="navi">Skills</a>
+      <a href="project.html" class="navi">Projects</a>
+      <a href="contact.html" class="navi">Contact</a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <section id="skills" style="padding-top:calc(var(--nav-h) + 4rem);">
+    <span class="sec-eyebrow reveal">What I Know</span>
+    <h2 class="sec-title reveal">My Skills</h2>
+    <div class="sec-line reveal"></div>
+
+    <div class="skills-grid reveal-stagger">
+
+      <!-- Backend -->
+      <div class="skill-cat">
+        <div class="skill-cat-title">Backend</div>
+        <div class="skill-items">
+          <div class="skill-item">
+            <div class="skill-icon"><img src="./images/python.png" alt="Python"></div>
+            <span class="skill-name">Python</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon"><img src="./images/django.png" alt="Django"></div>
+            <span class="skill-name">Django</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon"><img src="./images/rest.png" alt="REST API"></div>
+            <span class="skill-name">REST API</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Frontend -->
+      <div class="skill-cat">
+        <div class="skill-cat-title">Frontend</div>
+        <div class="skill-items">
+          <div class="skill-item">
+            <div class="skill-icon"><img src="./images/html.png" alt="HTML"></div>
+            <span class="skill-name">HTML5</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon"><img src="./images/css.png" alt="CSS"></div>
+            <span class="skill-name">CSS3</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon"><img src="./images/js.png" alt="JavaScript"></div>
+            <span class="skill-name">JavaScript</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon"><img src="./images/boot.png" alt="Bootstrap"></div>
+            <span class="skill-name">Bootstrap</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon"><img src="./images/react.png" alt="React"></div>
+            <span class="skill-name">React JS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Database -->
+      <div class="skill-cat">
+        <div class="skill-cat-title">Database</div>
+        <div class="skill-items">
+          <div class="skill-item">
+            <div class="skill-icon"><img src="./images/mysql.png" alt="MySQL"></div>
+            <span class="skill-name">MySQL</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon"><img src="./images/sql.png" alt="SQL"></div>
+            <span class="skill-name">SQL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools & Platforms -->
+      <div class="skill-cat">
+        <div class="skill-cat-title">Tools &amp; Platforms</div>
+        <div class="skill-items">
+          <div class="skill-item">
+            <div class="skill-icon"><img src="./images/git.png" alt="GitHub"></div>
+            <span class="skill-name">GitHub</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon"><img src="./images/shell.png" alt="Shell Script"></div>
+            <span class="skill-name">Shell Script</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon"><img src="./images/linux.png" alt="Linux"></div>
+            <span class="skill-name">Linux</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon"><img src="./images/aws.png" alt="AWS"></div>
+            <span class="skill-name">AWS</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon"><img src="./images/excel.png" alt="MS Excel"></div>
+            <span class="skill-name">MS Excel</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-text">© 2025 Prashith Kumar G</span>
+    <span class="footer-text">Python Full-Stack Developer</span>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const links  = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      links.classList.remove('open');
+    }));
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+    }, {threshold: 0.12});
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

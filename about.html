@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>About — Prashith Kumar G</title>
+</head>
+<body>
+
+  <nav class="nav">
+    <span class="nav-logo">PK</span>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html"   class="navi">Home</a>
+      <a href="about.html"   class="navi">About</a>
+      <a href="skill.html"   class="navi">Skills</a>
+      <a href="project.html" class="navi">Projects</a>
+      <a href="contact.html" class="navi">Contact</a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <section id="about" style="padding-top:calc(var(--nav-h) + 4rem);">
+    <span class="sec-eyebrow reveal">Who I Am</span>
+    <h2 class="sec-title reveal">About Me</h2>
+    <div class="sec-line reveal"></div>
+
+    <div class="about-grid">
+      <!-- Stats sidebar -->
+      <div class="about-stats reveal-stagger">
+        <div class="stat-card">
+          <div class="stat-num">2+</div>
+          <div class="stat-lbl">Certificates</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">10+</div>
+          <div class="stat-lbl">Technologies</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">3+</div>
+          <div class="stat-lbl">Projects Built</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">AWS</div>
+          <div class="stat-lbl">Cloud Platform</div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="about-body reveal">
+        <p>
+          <strong>Passionate about building scalable web applications</strong> that live
+          at the intersection of clean code and great user experience. I am a
+          Full-Stack Developer with a deep specialisation in Python — my journey in
+          tech is driven by curiosity for how things work under the hood.
+        </p>
+        <p>
+          On the backend I architect <strong>robust APIs and database structures</strong>
+          using Django and REST API, ensuring every application is secure and
+          performant. On the frontend, I bring those systems to life with React and
+          modern CSS, creating intuitive interfaces that users love.
+        </p>
+        <p>
+          Being a Full-Stack developer isn't just about knowing two sides of a
+          coin — it's about understanding the <strong>entire lifecycle of a product</strong>
+          to build better solutions. I'm proficient in Linux environments and version
+          control using GitHub.
+        </p>
+        <p>
+          I have experience building <strong>responsive, mobile-first designs</strong>
+          with Bootstrap, and I'm skilled in deploying and managing cloud
+          infrastructure through AWS.
+        </p>
+
+        <div class="about-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Django</span>
+          <span class="tag">REST API</span>
+          <span class="tag">React JS</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Linux</span>
+          <span class="tag">AWS</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">Bootstrap</span>
+          <span class="tag">Shell Script</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-text">© 2025 Prashith Kumar G</span>
+    <span class="footer-text">Python Full-Stack Developer</span>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const links  = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      links.classList.remove('open');
+    }));
+
+    /* Scroll reveal */
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+    }, {threshold: 0.12});
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

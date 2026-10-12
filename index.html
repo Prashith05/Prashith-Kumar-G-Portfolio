@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Prashith Kumar G — Full-Stack Developer</title>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav">
+    <span class="nav-logo">PK</span>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html"   class="navi">Home</a>
+      <a href="about.html"   class="navi">About</a>
+      <a href="skill.html"   class="navi">Skills</a>
+      <a href="project.html" class="navi">Projects</a>
+      <a href="contact.html" class="navi">Contact</a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-text">
+      <span class="eyebrow">Full-Stack Developer</span>
+      <h1 class="hero-title">Prashith<br>Kumar G</h1>
+      <p class="hero-role">Python · Django · React</p>
+      <p class="hero-desc">
+        In a world driven by data and design, I sit at their intersection.
+        I thrive on taking a concept from a blank canvas to a fully deployed
+        application — writing clean, maintainable code that powers meaningful
+        experiences.
+      </p>
+      <div class="hero-actions">
+        <a href="resume.pdf" download="Prashith_Kumar_G_Resume.pdf">
+          <button class="btn-primary">&#8595; Download Resume</button>
+        </a>
+        <a href="contact.html">
+          <button class="btn-ghost">Get in Touch</button>
+        </a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://instagram.com/prasi__05" target="_blank" class="social-icon" aria-label="Instagram">
+          <img src="./images/instagram.svg" alt="Instagram">
+        </a>
+        <a href="https://github.com/Prashith05" target="_blank" class="social-icon" aria-label="GitHub">
+          <img src="./images/github.svg" alt="GitHub">
+        </a>
+        <a href="mailto:prashith3@gmail.com" class="social-icon" aria-label="Email">
+          <img src="./images/email.svg" alt="Email">
+        </a>
+        <a href="https://www.linkedin.com/in/prashith-kumar-g-63981139b/" target="_blank" class="social-icon" aria-label="LinkedIn">
+          <img src="./images/linkedin.svg" alt="LinkedIn">
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-image-wrap">
+      <div class="img-frame">
+        <img src="./images/me.png" alt="Prashith Kumar G" id="mypic">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <span class="footer-text">© 2025 Prashith Kumar G</span>
+    <span class="footer-text">Python Full-Stack Developer</span>
+  </footer>
+
+  <script>
+    /* Mobile nav toggle */
+    const toggle = document.getElementById('nav-toggle');
+    const links  = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      links.classList.toggle('open');
+    });
+    /* Close on link click */
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      links.classList.remove('open');
+    }));
+  </script>
+</body>
+</html>
